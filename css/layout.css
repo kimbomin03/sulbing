@@ -1,0 +1,135 @@
+.inner {
+    max-width: 141rem;
+    margin: 0 auto;
+}
+
+
+.w_inner {
+    max-width: calc((100% - 141rem)/2 + 141rem);
+    margin-left: auto;
+}
+
+.default {
+    padding: 8rem 0;
+}
+
+.default .title {
+    max-width: 141rem;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+}
+
+.default .title h2 {
+    font-size: 4.8rem;
+    font-weight: 700;
+    color: #42120e;
+}
+
+.default .title h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.default .title p {
+    margin-top: 3.2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    opacity: 0.75;
+}
+
+.default_btn {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2rem;
+    height: 8rem;
+    border-radius: 4rem;
+    background: #FFFBF2;
+    color: #42120e;
+    font-size: 2rem;
+    overflow: hidden;
+}
+
+.default_btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    height: 0;
+    background: #42120e;
+
+    transition: 0.4s;
+}
+
+.default_btn.c {
+    color: #FFFBF2;
+    border: 3px solid #FFFBF2;
+}
+
+.default_btn.c:hover {
+    color: #FFFBF2;
+}
+
+.default_btn::after {
+    content: "";
+    margin-left: 8px;
+    width: 1.4rem;
+    height: 1.4rem;
+    background: url(../images/arrow-right.svg) no-repeat center center/2rem;
+}
+
+.scroll {
+    font-size: 12px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.scroll::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: 50%;
+
+    transform: translate(-50%, 0);
+
+    width: 4px;
+    height: 4px;
+
+    background: var(--body-color);
+    border-radius: 50%;
+
+    animation: scroll 2s infinite;
+    color: #000;
+}
+
+.scroll::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    margin-top: 16px;
+    width: 1px;
+    height: 80px;
+    background: var(--white-color);
+    opacity: 0.5;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 80px);
+    }
+
+    100% {
+        transform: translate(-50%, 80px) scale(12);
+        opacity: 0;
+    }
+}
